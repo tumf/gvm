@@ -17,5 +17,9 @@ RUN apt-get install -y curl git
 RUN apt-get install -y binutils bison gcc make
 RUN curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer|bash
 
+# Install GVM 1.4
+RUN bash -c "source /root/.gvm/scripts/gvm &&\
+    gvm install go1.4 &&\
+    gvm use go1.4 --default"
 
 
